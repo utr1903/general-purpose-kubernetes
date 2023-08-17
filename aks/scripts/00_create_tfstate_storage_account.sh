@@ -16,7 +16,6 @@ resourceGroupName="rg${owner}${project}${version}"
 storageAccountName="st${owner}${project}${version}"
 blobContainerName="${project}tfstates"
 
-
 # Resource group
 echo "Checking shared resource group [${resourceGroupName}]..."
 resourceGroup=$(az group show \
