@@ -36,3 +36,6 @@ terraform.rc
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 tfplan
 .terraform.lock.hcl
+
+# Backend config for Terraform init
+backend.config
