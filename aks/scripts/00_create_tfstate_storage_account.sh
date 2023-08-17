@@ -1,21 +1,15 @@
 #!/bin/bash
 
-###################
-### Infra Setup ###
-###################
-
 ### Set parameters
 owner="utr1903"
 project="nr1general"
-locationLong="westeurope"
-version="001"
+location="westeurope"
+instance="001"
 
 ### Set variables
-
-resourceGroupName="rg${owner}${project}${version}"
-storageAccountName="st${owner}${project}${version}"
+resourceGroupName="rg${owner}${project}${instance}"
+storageAccountName="st${owner}${project}${instance}"
 blobContainerName="${project}tfstates"
-
 
 # Resource group
 echo "Checking shared resource group [${resourceGroupName}]..."
@@ -28,7 +22,7 @@ if [[ $resourceGroup == "" ]]; then
 
   resourceGroup=$(az group create \
     --name $resourceGroupName \
-    --location $locationLong)
+    --location $location)
 
   echo -e " -> Shared resource group is created successfully.\n"
 else
